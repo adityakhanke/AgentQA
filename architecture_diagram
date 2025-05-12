@@ -1,0 +1,68 @@
+graph TD
+    subgraph "Test Definition"
+        A[Gherkin Feature Files]
+    end
+
+    subgraph "Core Framework"
+        B[Test Orchestrator]
+        C[Agent Manager]
+        D[Context Manager]
+        E[Tool Registry]
+    end
+
+    subgraph "Agent System"
+        F[Parser Agent]
+        G[Implementor Agent]
+        H[Executor Agent]
+        I[Checker Agent]
+        J[Reporter Agent]
+    end
+
+    subgraph "Interaction Layer"
+        K[Element Finder Service]
+        L[Mobile Interaction Tools]
+        M[Session Manager]
+    end
+
+    subgraph "Device Layer"
+        N[Appium Client]
+        O[Mobile Device/Emulator]
+    end
+
+    subgraph "Output"
+        P[Test Reports]
+        Q[Test Evidence]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    
+    C --> F
+    C --> G
+    C --> H
+    C --> I
+    C --> J
+    
+    H --> K
+    H --> L
+    H --> M
+    
+    K --> N
+    L --> N
+    M --> N
+    
+    N --> O
+    
+    H --> Q
+    J --> P
+    Q --> P
+    
+    D <--> F
+    D <--> G
+    D <--> H
+    D <--> I
+    D <--> J
+    
+    E <--> L
