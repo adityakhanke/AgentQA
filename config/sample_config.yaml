@@ -1,0 +1,115 @@
+# Sample Configuration for Mobile Testing Framework
+
+# Appium Configuration
+appium:
+  server_url: "http://localhost:4723"
+  implicit_wait_seconds: 10
+  explicit_wait_seconds: 30
+  
+  # Android Configuration
+  android:
+    automation_name: "UiAutomator2"
+    device_name: "Android Emulator"
+    platform_version: "12.0"  # Target Android version
+    app: "/path/to/your/app.apk"  # Path to your APK file
+    app_package: "com.example.myapp"  # Your app's package name
+    app_activity: "com.example.myapp.MainActivity"  # Your app's main activity
+    no_reset: false
+    full_reset: false
+    new_command_timeout: 6000
+    auto_grant_permissions: true
+  
+  # iOS Configuration
+  ios:
+    automation_name: "XCUITest"
+    device_name: "iPhone Simulator"
+    platform_version: "15.0"  # Target iOS version
+    app: "/path/to/your/app.ipa"  # Path to your iOS app
+    bundle_id: "com.example.myapp"  # Your app's bundle ID
+    no_reset: false
+    full_reset: false
+    new_command_timeout: 6000
+    use_new_wda: true
+    wda_local_port: 8100
+    auto_accept_alerts: false
+
+# Agent Configuration
+agents:
+  parser:
+    name: "ParserAgent"
+    temperature: 0.1
+    max_tokens: 100000
+  implementor:
+    name: "ImplementorAgent"
+    temperature: 0.1
+    max_tokens: 100000
+  executor:
+    name: "ExecutorAgent"
+    temperature: 0.1
+    max_tokens: 100000
+  checker:
+    name: "CheckerAgent"
+    temperature: 0.1
+    max_tokens: 100000
+  reporter:
+    name: "ReporterAgent"
+    temperature: 0.1
+    max_tokens: 100000
+
+# LLM Configuration
+llm:
+  config_list:
+    - model: "gpt-4-turbo"
+      api_key: "${OPENAI_API_KEY}"  # Uses environment variable
+      api_base: "https://api.openai.com/v1"
+      api_type: "openai"
+  temperature: 0.1
+  max_tokens: 100000
+  top_p: 0.9
+  request_timeout: 1200
+  retry_count: 3
+  retry_wait_seconds: 5
+
+# Execution Configuration
+execution:
+  screenshot_on_step: true
+  screenshot_on_error: true
+  fail_fast: false
+  default_timeout_ms: 10000
+  test_parallel: false
+  test_retry_count: 1
+  platform: "android"  # or "ios"
+
+# Reporting Configuration
+reporting:
+  generate_html: true
+  include_screenshots: true
+  include_logs: true
+  upload_results: false
+  upload_url: ""
+  report_dir: "test_reports"
+  generate_insights: true
+
+# Network Monitoring
+network_monitoring:
+  enabled: true
+  request_logging: true
+  wait_for_idle_timeout: 5
+  idle_threshold: 0.5
+
+# Screen Definition Registry
+screens:
+  registry_enabled: true
+  definitions_dir: "screen_definitions"
+  validation_threshold: 0.7
+
+# Interrupt Handling
+interrupt_handling:
+  enabled: true
+  handlers_dir: "interrupt_handlers"
+  check_frequency: 1  # seconds
+
+# Test Data
+test_data:
+  data_dir: "test_data"
+  env: "test"  # test, staging, production
