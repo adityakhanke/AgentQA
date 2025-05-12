@@ -1,4 +1,4 @@
-# AgnetQA - Enhanced Mobile Testing Framework
+# AgentQA - Enhanced Mobile Testing Framework
 
 An AI-powered, production-ready mobile testing framework that combines the best of both worlds. This framework leverages LLMs to understand Gherkin specifications, convert them to executable test steps, and intelligently interact with mobile applications through Appium.
 
