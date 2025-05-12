@@ -1,4 +1,4 @@
-# Enhanced Mobile Testing Framework
+# AgnetQA - Enhanced Mobile Testing Framework
 
 An AI-powered, production-ready mobile testing framework that combines the best of both worlds. This framework leverages LLMs to understand Gherkin specifications, convert them to executable test steps, and intelligently interact with mobile applications through Appium.
 
@@ -35,7 +35,7 @@ These agents are orchestrated by the Test Orchestrator and communicate through a
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/kad2341/agentqa.git
+git clone https://github.com/adityakhanke/AgentQA.git
 cd agentqa
 ```
 
@@ -248,3 +248,4 @@ Contributions to the framework are welcome! Please follow these steps:
 3. Add your feature or fix
 4. Write tests for your changes
 5. Submit a pull request
+
